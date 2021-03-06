@@ -1,0 +1,129 @@
+#container {
+  margin-top: -23px;
+  width: 98vw;
+}
+
+#container > #input-name {
+  position: absolute;
+  margin-left: 71.5vw;
+  width: 21.4vw;
+  margin-top: -42px;
+  height: 42px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+#container > #input-name > input {
+  position: absolute;
+  width: 88%;
+  margin-top: -2px;
+  height: 42px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  font-size: 20px;
+  border-radius: 4px;
+
+}
+
+#container > #input-name > img{
+  border-radius: 0px 0px 4px 4px;
+  padding: 2px;
+  background-color: white;
+
+}
+
+#container > div {
+  margin-left: 170px;
+}
+
+#container > button {
+  float: right;
+  background-color: #D11111;
+  color: white;
+  margin-right: 4.6vw;
+  margin-top: -3vh;
+  margin-bottom: 30px;
+  font-size: 25px;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #000000;
+  width: 280px;
+}
+
+#container > div > mat-form-field {
+  background-color: white;
+  height: 38px;
+  margin-left: 3vw;
+  width: 20%;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+#container > #panel {
+  margin: 3vw;
+  width: 90vw;
+  height: 90vh;
+  overflow-y: auto;
+  position: center;
+  background-image: url("../../../../assets/imagens/pokebola-apagada.png");
+  background-repeat: no-repeat;
+  background-size: 100vh;
+  background-position: center;
+  background-color: #efefef;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+#container > #panel > .grid {
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5vw;
+  position: center;
+}
+
+.example-card {
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow: 3px 3px 5px 6px #ccc; /* Firefox 3.5 - 3.6 */
+  box-shadow: 3px 3px 5px 6px #ccc;
+
+  width: 21.5vw;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.example-card > mat-card-title {
+
+  margin-left: 2px;
+  font-size: 1.5rem;
+}
+
+.example-card > mat-card-subtitle {
+
+  margin-left: 2px;
+  font-size: 1.2rem;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.example-card > .types {
+  position: right;
+  gap: 2%;
+  display: flex;
+}
+
+.example-card > .types > div > p {
+  color: white;
+  font-size: 1rem;
+  border-radius: 7px;
+  height: 1.1rem;
+  width: 8vw;
+  text-align: center;
+  padding: 8px;
+  background-color: red;
+}

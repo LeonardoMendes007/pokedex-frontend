@@ -1,0 +1,65 @@
+<div id="container">
+  <div cols="2" id="combo">
+    <mat-form-field id="type" >
+      <mat-label style="font-size: 20px;">Tipo</mat-label>
+      <mat-select [(value)]="selectedValueType" >
+        <mat-option style="font-size: 20px; font-weight: bold;" (click)="selectValueWeaknesses(0)">Todos</mat-option>
+        <mat-option style="font-size: 18px;" *ngFor="let type of types" [value]="type.id" #camboType  (click)="selectValueType(camboType.value)" >{{type.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field id="weakness">
+      <mat-label style="font-size: 20px;">Fraqueza</mat-label>
+      <mat-select [(value)]="selectedValueWeaknesses">
+        <mat-option style="font-size: 20px; font-weight: bold;" (click)="selectValueWeaknesses(0)">Todos</mat-option>
+        <mat-option style="font-size: 18px;" *ngFor="let type of types" [value]="type.id" #camboType  (click)="selectValueWeaknesses(camboType.value)" >{{type.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div id="input-name">
+    <img src="../../../assets/imagens/Desenho-Lupa-PNG.png" alt="Lupa" width=32>
+    <input type="text" (keyup)="onFilterPokemons(campoPesquisa.value)" #campoPesquisa/>
+  </div>
+
+  <div id="panel">
+
+    <div class="grid">
+
+      <mat-card class="example-card" *ngFor="let pokemon of pokemons">
+        <img mat-card-image src={{pokemon.imgUrl}}>
+        <mat-card-subtitle *ngIf="pokemon.id > 0" >N°00{{pokemon.id}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="pokemon.id > 10" >N°0{{pokemon.id}}</mat-card-subtitle>
+        <mat-card-subtitle *ngIf="pokemon.id > 100" >N°{{pokemon.id}}</mat-card-subtitle>
+        <mat-card-title>{{pokemon.name}}</mat-card-title>
+        <mat-card-content class="types">
+          <div *ngFor="let type of pokemon.types">
+            <p *ngIf="type.name == 'Grama'" style="background-color: #9bcc50;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Venenoso'" style="background-color: #b97fc9;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Fogo'" style="background-color: #fd7d24;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Psíquico'" style="background-color: #f366b9;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Voador'" style="background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);">{{type.name}}</p>
+            <p *ngIf="type.name == 'Gelo'" style="background-color: #51c4e7;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Água'" style="background-color: #4592c4;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Terrestre'" style="background-color: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);">{{type.name}}</p>
+            <p *ngIf="type.name == 'Pedra'" style="background-color: #a38c21">{{type.name}}</p>
+            <p *ngIf="type.name == 'Elétrico'" style="background-color: #eed535;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Inseto'" style="background-color: #729f3f;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Aço'" style="background-color: #9eb7b8;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Fantasma'" style="background-color: #7b62a3;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Sombrio'" style="background-color: #707070;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Luta'" style="background-color: #d56723;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Fada'" style="background-color: #fdb9e9;">{{type.name}}</p>
+            <p *ngIf="type.name == 'Dragão'" style="background-color: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);">{{type.name}}</p>
+            <p *ngIf="type.name == 'Normal'" style="background-color: #a4acaf;">{{type.name}}</p>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+  <button mat-raised-button routerLink="createPokemon"> Cadastrar Pokemon </button>
+  <div style="height: 50px;"></div>
+</div>

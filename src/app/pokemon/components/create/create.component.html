@@ -1,0 +1,18 @@
+<div id="container">
+
+  <form>
+    <div cols="3">
+      <mat-form-field  appearance="fill">
+        <mat-label>id</mat-label>
+        <input matInput #input placeholder="id">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+      <mat-form-field hintLabel="Máximo 30 characteres" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput #input maxlength="30" placeholder="Nome">
+        <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+      </mat-form-field>
+
+    </div>
+  </form>
+</div>
